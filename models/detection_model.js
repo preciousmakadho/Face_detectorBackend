@@ -5,6 +5,7 @@ const DetectionSchema = new Schema({
   firstName: String,
   lastName: String,
   email: String,
+  profileId:String,
 }, { timestamps: true });
 
 // Export the model
