@@ -9,7 +9,8 @@ const LocationSchema = new Schema({
   province:String,        
   shading: Number,       
   sunlightIntensity: Number, 
-  terrain: Number 
+  terrain: Number,
+  province:Number, 
 },
   { timestamps: true });
 

@@ -23,8 +23,13 @@ db.once("open", function () {
 });
 //---- ROUTER IMPORTS ------
 const locations_router = require("./routes/locations_router")
+const profile_router = require("./routes/profile_router")
+const detection_router = require("./routes/detections_router")
 //---- ROUTER APP USE IMPLEMENTATION ------
 app.use(`${prefix}/locations`,locations_router);
+app.use(`${prefix}/profiles`,profile_router);
+app.use(`${prefix}/detections`,detection_router);
+
 
 
 app.listen(3061, () => {

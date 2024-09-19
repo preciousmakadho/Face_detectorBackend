@@ -139,4 +139,27 @@ router.delete('/deleteUser/:userId', async (req, res) => {
   }
 });
 
+
+
+router.post("/recommend", async (req, res) => {
+  try {
+    // Extract query parameters
+    const { size, shading, sunlightIntensity, terrain, province } = req.body;
+
+    // Construct a filter object
+    const filter = {};
+    if (size) filter.size = Number(size);
+    if (shading) filter.shading = Number(shading);
+    if (sunlightIntensity) filter.sunlightIntensity = Number(sunlightIntensity);
+    if (terrain) filter.terrain = Number(terrain);
+    if (province) filter.province = Number(province);
+
+    // Find locations based on the filter
+    const locations = await LocationsModel.find(filter);
+    res.json(locations);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 module.exports = router;
