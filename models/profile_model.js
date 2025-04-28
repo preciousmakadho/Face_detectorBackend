@@ -7,7 +7,11 @@ const ProfileSchema = new Schema({
   lastName: String,
   email: String,
   age: Number,
-  address: String
+  address: String,
+  department: String,
+  employeeId: String,
+  status: String,
+  position:String
 }, { timestamps: true });
 
 // Export the model
